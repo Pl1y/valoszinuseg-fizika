@@ -58,7 +58,7 @@ function genonce() {
     darab++;
     document.getElementById("darabszam").innerHTML = `Dobások száma eddig: ${darab}`;
     table = document.getElementById("values")
-    table.innerHTML += `<tr><th scope="col">${darab}.</th><th scope="col">${value}</th><td>${elso}</td><td>${masodik}</td><td>${harmadik}</td><td>${negyedik}</td><td>${otodik}</td><td>${hatodik}</td></tr>`;
+    table.innerHTML += `<tr><th scope="col">${darab}.</th><th style="text-align:right;font-weight:bold;">${num1}</th><th style="text-align:left;font-weight:bold;">${num2}</th><td style="text-align:center;">${elso}</td><td style="text-align:center;">${masodik}</td><td style="text-align:center;">${harmadik}</td><td style="text-align:center;">${negyedik}</td><td style="text-align:center;">${otodik}</td><td style="text-align:center;">${hatodik}</td></tr>`;
 }
 
 function gen50x(){
@@ -73,3 +73,10 @@ function sleep(milliseconds) {
       currentDate = Date.now();
     } while (currentDate - date < milliseconds);
   }
+
+function exportTableToExcel(){
+  /* Create worksheet from HTML DOM TABLE */
+  var wb = XLSX.utils.table_to_book(document.getElementById("values"));
+  /* Export to file (start a download) */
+  XLSX.writeFile(wb, "SheetJSTable.xlsx");
+}
