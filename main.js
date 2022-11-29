@@ -78,5 +78,5 @@ function exportTableToExcel(){
   /* Create worksheet from HTML DOM TABLE */
   var wb = XLSX.utils.table_to_book(document.getElementById("values"));
   /* Export to file (start a download) */
-  XLSX.writeFile(wb, "SheetJSTable.xlsx");
+  XLSX.writeFile(wb, "valoszinuseg.xlsx");
 }
