@@ -62,7 +62,7 @@ function genonce() {
 }
 
 function gen50x(){
-    for(var i= 0; i < 50; i++){genonce();}
+    for(var i= 0; i < 10000; i++){genonce();}
 }
 
 
